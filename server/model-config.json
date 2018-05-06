@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "gamers": {
+    "dataSource": "db",
+    "public": true
+  },
+  "customAccessTokens": {
+    "dataSource": "db",
+    "public": false
+  },
+  "picks": {
+    "dataSource": "db",
+    "public": true
+  },
+  "matches": {
+    "dataSource": "db",
+    "public": true
+  },
+  "tournaments": {
+    "dataSource": "db",
+    "public": true
+  },
+  "teams": {
+    "dataSource": "db",
+    "public": true
+  },
+  "matchTypes": {
+    "dataSource": "db",
+    "public": true
+  }
+}

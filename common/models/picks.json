@@ -1,0 +1,37 @@
+{
+  "name": "picks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "score": {
+      "type": "object",
+      "required": true
+    },
+    "points": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gamer": {
+      "type": "belongsTo",
+      "model": "gamers",
+      "foreignKey": "gamerId",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    },
+    "match": {
+      "type": "belongsTo",
+      "model": "matches",
+      "foreignKey": "matchId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

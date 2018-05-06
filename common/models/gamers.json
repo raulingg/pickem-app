@@ -1,0 +1,58 @@
+{
+  "name": "gamers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "points": {
+      "type": "number",
+      "default": 0
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "position": {
+      "type": "number"
+    },
+    "university": {
+      "type": "string"
+    },
+    "career": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "customAccessTokens",
+      "polymorphic": {
+        "foreignKey": "userId",
+        "discriminator": "principalType"
+      },
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "picks": {
+      "type": "hasMany",
+      "model": "picks",
+      "foreignKey": "",
+      "options": {
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

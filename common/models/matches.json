@@ -1,0 +1,73 @@
+{
+  "name": "matches",
+  "base": "PersistedModel",
+  "strict": "filter",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "when": {
+      "type": "date",
+      "required": true
+    },
+    "score": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tournaments": {
+      "type": "belongsTo",
+      "model": "tournaments",
+      "foreignKey": "tournamentId",
+      "options": {
+        "disableInclude": false
+      }
+    },
+    "matchtype": {
+      "type": "embedsOne",
+      "model": "matchTypes",
+      "property": "matchType",
+      "properties": {
+        "name": "name"
+      },
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "teamone": {
+      "type": "embedsOne",
+      "model": "teams",
+      "property": "teamOne",
+      "properties": {
+        "name": "name",
+        "shortName": "shortName",
+        "color": "color",
+        "badge": "badge"
+      },
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "teamtwo": {
+      "type": "embedsOne",
+      "model": "teams",
+      "property": "teamTwo",
+      "properties": {
+        "name": "name",
+        "shortName": "shortName",
+        "color": "color",
+        "badge": "badge"
+      },
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
