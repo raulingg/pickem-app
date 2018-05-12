@@ -23,4 +23,3 @@ npm-debug.log
 #Folder apps
 client_src/*
 client/*
-!client/.gitkeep
